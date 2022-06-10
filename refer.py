@@ -63,7 +63,7 @@ rng = np.random.RandomState(0)
 
 # Helper function to train and predict IF model for a feature
 def train_and_predict_if(df, feature):
-    clf = IsolationForest(max_samples=100, random_state=rng)
+    clf = IsolationForest(max_samples=256, random_state=rng)
     clf.fit(df[[feature]])
     pred = clf.predict(df[[feature]])
     scores = clf.decision_function(df[[feature]])
